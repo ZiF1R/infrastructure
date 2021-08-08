@@ -1,0 +1,84 @@
+@import "../vars"
+
+nav
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 35px 0
+
+    .menu
+
+        img
+            cursor: pointer
+
+.menu__overlay
+    font-family: 'Roboto', sans-serif
+    position: fixed
+    opacity: 1
+    width: 100vw
+    height: 100vh
+    top: 0
+    left: 0
+    background: rgba(0, 0, 0, 0.6)
+    z-index: 20
+
+    transition: all .21s ease-out
+
+    a
+        color: #ffffff
+        text-decoration: none
+
+    .menu__links
+        display: flex
+        flex-direction: column
+        padding: 100px 50px 50px 150px
+        width: 50%
+        height: 100%
+
+        background: #151515
+        transition: all .24s ease-out
+        overflow-y: auto
+
+        line-height: 1.75em
+        font-weight: 400
+        font-size: 1.5em
+
+        & > *
+            margin-bottom: 10px
+
+        .link__sublinks
+            display: flex
+            flex-direction: column
+            font-weight: 300
+            font-size: 0.83em
+            margin-bottom: 15px
+
+        img
+            position: absolute
+            top: 40px
+            left: 50px
+
+.contact-tel
+    display: flex
+    align-items: center
+
+    button
+        display: flex
+        align-self: center
+
+        &:hover img
+
+    div
+        font-size: 1.25em
+        font-weight: 700
+        margin-right: 30px
+
+        span
+            color: $color-gold
+
+.menu_disabled
+    opacity: 0
+    z-index: -1
+
+    .menu__links
+        transform: translateX(-100%)

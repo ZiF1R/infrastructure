@@ -1,0 +1,28 @@
+.button-material {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-material__circle {
+  position: absolute;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: translate(-50%, -50%);
+  animation: growing 0.75s forwards;
+}
+
+@keyframes growing {
+  0% {
+    opacity: 1;
+    width: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 0;
+    width: 200px;
+    height: 200px;
+  }
+}

@@ -1,0 +1,88 @@
+- 
+    let links = [
+        {
+            name: "Главная",
+            href: "/",
+            subLinks: [],
+        },
+        {
+            name: "Компания",
+            href: "#",
+            subLinks: [
+                {
+                    name: "Вакансии",
+                    href: "#",
+                },
+            ],
+        },
+        {
+            name: "Услуги",
+            href: "#",
+            subLinks: [
+                {
+                    name: "Сети водоснабжения",
+                    href: "#",
+                },
+                {
+                    name: "Водоотведение и канализация",
+                    href: "#",
+                },
+                {
+                    name: "Наружные тепловые сети",
+                    href: "#",
+                },
+                {
+                    name: "Монтаж Ж/Б конструкций",
+                    href: "#",
+                },
+                {
+                    name: "Благоустройство территорий",
+                    href: "#",
+                },
+            ],
+        },
+        {
+            name: "Проекты",
+            href: "#",
+            subLinks: [],
+        },
+        {
+            name: "Контакты",
+            href: "#",
+            subLinks: [],
+        },
+        {
+            name: "Политика конфиденциальности",
+            href: "#",
+            subLinks: [],
+        },
+    ]
+
+mixin navLink(link)
+    if link.subLinks.length
+        .links__link
+            a(href=link.href)= link.name
+            
+            .link__sublinks 
+                for subLink of link.subLinks
+                    a(href=subLink.href)= subLink.name
+    else
+        a(href=link.href)= link.name
+
+nav 
+    .menu
+        img.menu-btn(src="./icons/nav/menu.svg", alt="menu")
+        .menu__overlay.menu_disabled
+            .menu__links
+                img.menu-btn(src="./icons/nav/menu-close.svg", alt="menu")
+                for link of links
+                    +navLink(link)
+
+    .contact-tel 
+        div 
+            span +7 (812) 
+            . 
+                401-64-95
+        button.button.button_primary.button-material
+            img(draggable="false" src="./icons/nav/tel.svg", alt="tel")
+            span Обратный звонок

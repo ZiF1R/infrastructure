@@ -1,0 +1,61 @@
+-
+    let pathToIcons = "./icons/header/service";
+    let services = [
+        {
+            iconHref: `${pathToIcons}/plumbing.svg`,
+            text: "Монтаж сетей водоснабжения",
+        },
+        {
+            iconHref: `${pathToIcons}/piping.svg`,
+            text: "Водоотведение и канализация",
+        },
+        {
+            iconHref: `${pathToIcons}/radiator.svg`,
+            text: "Наружные тепловые сети и тепловые пункты",
+        },
+        {
+            iconHref: `${pathToIcons}/hot_springs.svg`,
+            text: "Монтаж Ж/Б конструкций",
+        },
+        {
+            iconHref: `${pathToIcons}/oak_tree.svg`,
+            text: "Благоустройство территории",
+        },
+    ];
+
+    let fullServices = ["проектирование", "согласование", "строительно-монтажные работы", "пусконаладочные работы", "сервисное обслуживание"];
+
+doctype html5
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+        link(rel="stylesheet", href="./css/main.css")
+        link(rel="stylesheet", href="./css/index.css")
+        link(rel="shortcut icon", href="./icons/logo.svg", type="image/x-icon")
+
+        title СК Инфраструктура
+    body 
+        header.main-header 
+            .container
+                include ../modules/nav
+                .header__content
+                    div 
+                        img(draggable="false" src="./icons/header/СК_ИНФРАСТРУКТУРА.svg", alt="СК_ИНФРАСТРУКТУРА")
+                        .header__services
+                            for service of services
+                                .services__service
+                                    img(draggable="false" src=service.iconHref)
+                                    p= service.text
+                        .header__full-services
+                            h2 Полный комплекс работ:
+                            ul 
+                                for service of fullServices
+                                    li= service
+
+                    img(draggable="false" src="./icons/logo.svg", alt="logo")
+
+        script(src="./scripts/plugins/material-buttons/index.js")
+        script(src="./scripts/menu.js")
