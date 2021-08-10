@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="./css/main.css"/>
     <link rel="stylesheet" href="./css/index.css"/>
+    <link rel="stylesheet" href="./css/components/our-projects.css"/>
+    <link rel="stylesheet" href="./css/popup.css"/>
     <link rel="shortcut icon" href="./icons/logo.svg" type="image/x-icon"/>
     <title>СК Инфраструктура</title>
   </head>
@@ -29,7 +31,7 @@
           </div>
           <div class="contact-tel"> 
             <div> <span>+7 (812) </span>401-64-95</div>
-            <button class="button button_primary button-material"><img draggable="false" src="./icons/nav/tel.svg" alt="tel"/><span>Обратный звонок</span></button>
+            <button class="button button_primary button-material" data-popup="true"><img draggable="false" src="./icons/nav/tel.svg" alt="tel"/><span>Обратный звонок</span></button>
           </div>
         </nav>
         <div class="header__content">
@@ -52,7 +54,7 @@
               </div>
             </div>
             <div class="header__full-services">
-              <h2>Полный комплекс работ:</h2>
+              <h3>Полный комплекс работ:</h3>
               <ul> 
                 <li>проектирование</li>
                 <li>согласование</li>
@@ -65,7 +67,78 @@
         </div>
       </div>
     </header>
+    <section class="principles">
+      <div class="container"> 
+        <div class="princples__content">
+          <h2>Наши принципы</h2>
+          <div> 
+            <div class="princples__principle"><img draggable="false" src="./icons/principles/guarantee.svg"/>
+              <div> 
+                <h3>Качество</h3>
+                <ul> 
+                  <li>используем лучшие материалы и комплектующие</li>
+                  <li>обладаем собственным парком техники</li>
+                </ul>
+              </div>
+            </div>
+            <div class="princples__principle"><img draggable="false" src="./icons/principles/workers.svg"/>
+              <div> 
+                <h3>Профессионализм, эффективность, развитие</h3>
+                <ul> 
+                  <li>Работаем с 2015 года</li>
+                  <li>ТОПовые специалисты</li>
+                </ul>
+              </div>
+            </div>
+            <div class="princples__principle"><img draggable="false" src="./icons/principles/helping_hand.svg"/>
+              <div> 
+                <h3>Предсказуемость и надежность</h3>
+                <ul> 
+                  <li>Нацеленность на результат</li>
+                  <li>Партнерские отношения</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <button class="button button_primary button-material">Подробнее о компании</button>
+        </div>
+        <div class="principles__slider"> <img draggable="false" src="./icons/principles/slider/1.png" alt=""/>
+          <div>
+            <h3>Наш парк техники</h3>
+            <p>Колесные экскаваторы JCB</p>
+            <div class="slider__controls">
+              <div class="controls__dots"><span class="active"></span><span></span><span></span></div>
+              <div class="controls__arrows">
+                <div class="arrows__previous button-material"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.55957 7.4375L8.10693 13.1045L8.73584 12.4893L3.7832 7.4375L8.73584 2.38232L8.10693 1.77392L2.55957 7.4375Z" fill="#E4B564"/>
+</svg>
+                </div>
+                <div class="arrows__next button-material"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<path d="M11.4404 6.5625L5.89307 0.895508L5.26416 1.51074L10.2168 6.5625L5.26416 11.6177L5.89307 12.2261L11.4404 6.5625Z" fill="#E4B564"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="14" height="14" fill="#E4B564" transform="translate(14) rotate(90)"/>
+</clipPath>
+</defs>
+</svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="our-projects"> 
+      <div class="container"> 
+        <h2>Наши клиенты и проекты</h2>
+        <button class="button button_primary button-material">Все проекты</button>
+      </div>
+    </section>
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/plugins/popup/popup.js"></script>
     <script src="./scripts/plugins/material-buttons/index.js"></script>
-    <script src="./scripts/menu.js"></script>
+    <script src="./scripts/plugins/telephone-mask/index.js"></script>
   </body>
 </html>

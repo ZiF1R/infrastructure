@@ -1,10 +1,13 @@
+@import "./vars"
+
 .main-header
     position: relative
     width: 100%
-    height: 100vh
+    height: auto
+    padding-bottom: 150px
 
     background-image: url('../icons/header.jpg')
-    background-position: center center
+    background-position: top left
     background-repeat: no-repeat
     background-size: cover
 
@@ -14,7 +17,7 @@
     flex-direction: row
     justify-content: space-between
 
-    margin: 100px 0
+    margin: 90px 0 0
 
     & > div
         display: flex
@@ -31,7 +34,7 @@
         opacity: 0.25
         align-self: center
         justify-self: center
-        max-width: 20%
+        max-width: 22%
         margin-right: 150px
 
 .header__services
@@ -48,8 +51,154 @@
     flex-direction: row
     align-items: center
 
+    font-weight: 400
     font-size: 1.125em
     flex: 0 1 33%
 
     img
         margin-right: 20px
+
+.header__full-services
+    font-family: 'Roboto', sans-serif
+
+    h3
+        font-size: 1.5em
+        font-weight: 700
+
+    ul
+        margin: 20px 0
+        list-style: none
+
+        line-height: 1.8em
+        font-weight: 400
+        font-size: 1.1875em
+
+    li::before
+        content: "—"
+        margin-right: 10px
+
+.principles .container
+    display: flex
+    position: relative
+    flex-direction: row
+    padding-bottom: 60px
+    justify-content: space-between
+
+    & > *
+        flex: 1 1 50%
+
+.princples__content
+    display: flex
+    flex-direction: column
+
+    h2
+        margin-top: 50px
+        font-size: 3.125em
+        font-weight: 700
+
+    & > div
+        margin: 70px 0 35px
+
+    .button
+        width: fit-content
+        align-self: center
+
+.princples__principle
+    display: flex
+    flex-direction: row
+    margin: 60px 0
+
+    &:first-child
+        margin-top: 0
+
+    &:last-child
+        margin-bottom: 0
+
+    h3
+        font-size: 1.4375em
+        font-weight: 700
+        margin-bottom: 15px
+
+    img
+        margin-right: 35px
+
+    ul
+        list-style: none
+
+        font-weight: 400
+        font-size: 1.125em
+
+    li::before
+        content: "—"
+        margin-right: 10px
+
+.principles__slider
+    position: relative
+
+    & > div
+        position: absolute
+        top: 65%
+        right: 0
+
+        padding: 30px 45px
+        background: #202020
+
+    & > img
+        margin-right: 30px
+
+    h3
+        font-weight: 700
+        font-size: 1.25em
+
+    p
+        margin: 10px 0 20px
+        font-weight: 300
+        font-size: 1em
+
+.slider__controls
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+
+    .controls__dots
+        display: flex
+        position: relative
+        flex-direction: row
+        justify-content: center
+        align-items: center
+
+        span
+            width: 8px
+            height: 8px
+            border-radius: 50%
+            margin: 0 10px
+            background: #fff
+            cursor: pointer
+
+            &.active
+                background: $color-gold
+
+            &:first-child
+                margin-left: 0
+
+    .controls__arrows
+        display: flex
+        flex-direction: row
+
+        svg
+            pointer-events: none
+
+        & > div
+            padding: 13px
+            border: 1px solid $color-gold
+            cursor: pointer
+            transition: all .21s ease-in-out
+
+            &:hover
+                background: $color-gold
+
+                & path
+                    fill: #000
+
+            &:first-child
+                margin-right: 15px

@@ -1,0 +1,99 @@
+.modal__overlay, .modal__window {
+    opacity: 0;
+    z-index: -1;
+}
+
+.modal_active .modal__overlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, .5);
+    z-index: 1000;
+}
+
+.modal_active .modal__window {
+    animation: showModal .25s ease-in forwards;
+    -moz-animation: showModal .25s ease-in forwards;
+    -webkit-animation: showModal .25s ease-in forwards;
+}
+
+.modal_hide .modal__overlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0);
+    z-index: 1000;
+}
+
+.modal_hide .modal__window {
+    animation: hideModal .25s ease-in forwards;
+    -moz-animation: hideModal .25s ease-in forwards;
+    -webkit-animation: hideModal .25s ease-in forwards;
+}
+
+.modal__overlay {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    background: rgba(0, 0, 0, 0);
+    transition: background .15s ease-in-out;
+}
+
+.modal__window {
+    display: flex;
+    flex-direction: column;
+    
+    margin-top: 0vh;
+    padding: 4vh 2vw 3vh;
+    width: calc(38% - 4vw);
+    height: max-content;
+
+    background: #fff;
+}
+
+.window__title {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.title__status {
+    height: 30px;
+    width: 30px;
+    margin-right: 1vw;
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.window__body {
+    line-height: 24px;
+    font-weight: 300;
+    font-size: 1.1em;
+    margin-bottom: 3.5vh;
+}
+
+@keyframes showModal {
+    0% {
+        margin-top: 0vh;
+        opacity: 0;
+    }
+    100% {
+        margin-top: 3vh;
+        opacity: 1;
+    }
+}
+
+@keyframes hideModal {
+    0% {
+        margin-top: 3vh;
+        opacity: 1;
+    }
+    100% {
+        margin-top: 0vh;
+        opacity: 0;
+    }
+}

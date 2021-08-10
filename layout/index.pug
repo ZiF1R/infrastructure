@@ -1,29 +1,47 @@
 -
-    let pathToIcons = "./icons/header/service";
+    let pathToServices = "./icons/header/service";
     let services = [
         {
-            iconHref: `${pathToIcons}/plumbing.svg`,
+            iconHref: `${pathToServices}/plumbing.svg`,
             text: "Монтаж сетей водоснабжения",
         },
         {
-            iconHref: `${pathToIcons}/piping.svg`,
+            iconHref: `${pathToServices}/piping.svg`,
             text: "Водоотведение и канализация",
         },
         {
-            iconHref: `${pathToIcons}/radiator.svg`,
+            iconHref: `${pathToServices}/radiator.svg`,
             text: "Наружные тепловые сети и тепловые пункты",
         },
         {
-            iconHref: `${pathToIcons}/hot_springs.svg`,
+            iconHref: `${pathToServices}/hot_springs.svg`,
             text: "Монтаж Ж/Б конструкций",
         },
         {
-            iconHref: `${pathToIcons}/oak_tree.svg`,
+            iconHref: `${pathToServices}/oak_tree.svg`,
             text: "Благоустройство территории",
         },
     ];
-
     let fullServices = ["проектирование", "согласование", "строительно-монтажные работы", "пусконаладочные работы", "сервисное обслуживание"];
+
+    let pathToPrinciples = "./icons/principles";
+    let principles = [
+        {
+            iconHref: `${pathToPrinciples}/guarantee.svg`,
+            title: "Качество",
+            points: ["используем лучшие материалы и комплектующие", "обладаем собственным парком техники"],
+        },
+        {
+            iconHref: `${pathToPrinciples}/workers.svg`,
+            title: "Профессионализм, эффективность, развитие",
+            points: ["Работаем с 2015 года", "ТОПовые специалисты"],
+        },
+        {
+            iconHref: `${pathToPrinciples}/helping_hand.svg`,
+            title: "Предсказуемость и надежность",
+            points: ["Нацеленность на результат", "Партнерские отношения"],
+        },
+    ];
 
 doctype html5
 html(lang="ru")
@@ -34,6 +52,8 @@ html(lang="ru")
 
         link(rel="stylesheet", href="./css/main.css")
         link(rel="stylesheet", href="./css/index.css")
+        link(rel="stylesheet", href="./css/components/our-projects.css")
+        link(rel="stylesheet", href="./css/popup.css")
         link(rel="shortcut icon", href="./icons/logo.svg", type="image/x-icon")
 
         title СК Инфраструктура
@@ -50,12 +70,59 @@ html(lang="ru")
                                     img(draggable="false" src=service.iconHref)
                                     p= service.text
                         .header__full-services
-                            h2 Полный комплекс работ:
+                            h3 Полный комплекс работ:
                             ul 
                                 for service of fullServices
                                     li= service
 
                     img(draggable="false" src="./icons/logo.svg", alt="logo")
 
+        section.principles
+            .container 
+                .princples__content
+                    h2 Наши принципы
+                    div 
+                        for principle of principles
+                            .princples__principle
+                                img(draggable="false" src=principle.iconHref)
+                                div 
+                                    h3= principle.title 
+                                    ul 
+                                        for point of principle.points 
+                                            li= point
+
+                    button.button.button_primary.button-material Подробнее о компании
+
+                .principles__slider 
+                    img(draggable="false" src="./icons/principles/slider/1.png", alt="")
+                    div
+                        h3 Наш парк техники
+                        p Колесные экскаваторы JCB
+                        .slider__controls
+                            .controls__dots
+                                span.active
+                                span
+                                span
+                            .controls__arrows
+                                .arrows__previous.button-material
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2.55957 7.4375L8.10693 13.1045L8.73584 12.4893L3.7832 7.4375L8.73584 2.38232L8.10693 1.77392L2.55957 7.4375Z" fill="#E4B564"/>
+                                    </svg>
+                                .arrows__next.button-material
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0)">
+                                        <path d="M11.4404 6.5625L5.89307 0.895508L5.26416 1.51074L10.2168 6.5625L5.26416 11.6177L5.89307 12.2261L11.4404 6.5625Z" fill="#E4B564"/>
+                                        </g>
+                                        <defs>
+                                        <clipPath id="clip0">
+                                        <rect width="14" height="14" fill="#E4B564" transform="translate(14) rotate(90)"/>
+                                        </clipPath>
+                                        </defs>
+                                    </svg>
+
+        include ../modules/our-projects
+
+        script(src="./scripts/main.js")
+        script(src="./scripts/plugins/popup/popup.js")
         script(src="./scripts/plugins/material-buttons/index.js")
-        script(src="./scripts/menu.js")
+        script(src="./scripts/plugins/telephone-mask/index.js")
